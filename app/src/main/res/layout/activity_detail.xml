@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/activity_detail"
+    tools:context=".DetailActivity">
+
+    <ImageView
+        android:id="@+id/background"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@color/primary_light"/>
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/img_detail_photo"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        app:civ_border_width="3dp"
+        app:civ_border_color="@color/white"
+        android:src="@android:color/holo_blue_bright"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.05" />
+
+    <TextView
+        android:id="@+id/txt_detail_username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/textview_background"
+        android:text="@string/username"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/img_detail_photo"
+        app:layout_constraintStart_toStartOf="@+id/img_detail_photo"
+        app:layout_constraintTop_toBottomOf="@+id/img_detail_photo" />
+
+    <TextView
+        android:id="@+id/txt_detail_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/textview_background"
+        android:layout_marginTop="16dp"
+        android:text="@string/name"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/txt_detail_username"
+        app:layout_constraintStart_toStartOf="@+id/txt_detail_username"
+        app:layout_constraintTop_toBottomOf="@+id/txt_detail_username" />
+
+    <TextView
+        android:id="@+id/txt_detail_following"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/textview_background"
+        android:text="@string/following"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/txt_detail_name"
+        app:layout_constraintStart_toStartOf="@+id/txt_detail_name"
+        app:layout_constraintTop_toBottomOf="@+id/txt_detail_name" />
+
+    <TextView
+        android:id="@+id/txt_detail_followers"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/textview_background"
+        android:text="@string/followers"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@+id/txt_detail_following"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/txt_detail_following" />
+
+    <TextView
+        android:id="@+id/txt_detail_repository"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/textview_background"
+        android:text="@string/repository"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/txt_detail_following"
+        app:layout_constraintTop_toTopOf="@+id/txt_detail_following" />
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/background"
+        app:tabTextColor="@android:color/white" />
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="350dp"
+        app:layout_constraintTop_toBottomOf="@id/tabs" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
